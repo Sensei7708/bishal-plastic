@@ -35,6 +35,90 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // === Navbar Shrink on Scroll ===
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // === 3D Tilt Effect on Cards ===
+  const tiltCards = document.querySelectorAll('.product-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
+
+  // === Scroll Reveal with Intersection Observer ===
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // === Counter Animation ===
+  const counterNumbers = document.querySelectorAll('.counter-item .number');
+
+  if (counterNumbers.length > 0) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const numberEl = entry.target;
+          const target = parseInt(numberEl.getAttribute('data-target'), 10);
+          const duration = 2000;
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(eased * target);
+
+            numberEl.textContent = current.toLocaleString();
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              numberEl.textContent = target.toLocaleString() + '+';
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          counterObserver.unobserve(numberEl);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counterNumbers.forEach(el => counterObserver.observe(el));
+  }
+
   // === Gallery Lightbox ===
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -46,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0;
 
   if (lightbox) {
-    const images = document.querySelectorAll('.gallery-grid img');
-    galleryImages = Array.from(images);
+    const items = document.querySelectorAll('.gallery-grid .gallery-item img');
+    galleryImages = Array.from(items);
 
-    images.forEach((img, index) => {
+    items.forEach((img, index) => {
       img.addEventListener('click', () => {
         currentIndex = index;
         openLightbox(img.src);
