@@ -95,6 +95,117 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ========== FLOATING 3D SHAPES ========== */
+/* ========== 3D CANVAS BACKGROUND ========== */
+#bg3d-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* ========== CSS 3D RING ========== */
+.css-3d-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: ring3D 12s infinite linear;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.css-3d-ring:nth-child(7) {
+  width: 250px;
+  height: 250px;
+  top: 15%;
+  right: 8%;
+  border-color: rgba(255, 255, 255, 0.06);
+  animation-duration: 15s;
+  animation-delay: -2s;
+}
+
+.css-3d-ring:nth-child(8) {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 5%;
+  border-color: rgba(255, 255, 255, 0.08);
+  animation-duration: 10s;
+  animation-delay: -5s;
+  border-style: dashed;
+}
+
+@keyframes ring3D {
+  0% { transform: perspective(800px) rotateX(60deg) rotateY(0deg) rotateZ(0deg); }
+  33% { transform: perspective(800px) rotateX(40deg) rotateY(120deg) rotateZ(60deg); }
+  66% { transform: perspective(800px) rotateX(80deg) rotateY(240deg) rotateZ(120deg); }
+  100% { transform: perspective(800px) rotateX(60deg) rotateY(360deg) rotateZ(180deg); }
+}
+
+/* ========== CSS 3D CUBE ========== */
+.css-3d-cube {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform-style: preserve-3d;
+  animation: cube3D 20s infinite linear;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.css-3d-cube:nth-child(9) {
+  top: 25%;
+  left: 20%;
+  animation-duration: 25s;
+}
+
+.css-3d-cube:nth-child(10) {
+  bottom: 15%;
+  right: 15%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 18s;
+  animation-delay: -7s;
+}
+
+.css-3d-cube .cube-face {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.css-3d-cube .cube-face.front { transform: translateZ(30px); }
+.css-3d-cube .cube-face.back { transform: rotateY(180deg) translateZ(30px); }
+.css-3d-cube .cube-face.right { transform: rotateY(90deg) translateZ(30px); }
+.css-3d-cube .cube-face.left { transform: rotateY(-90deg) translateZ(30px); }
+.css-3d-cube .cube-face.top { transform: rotateX(90deg) translateZ(30px); }
+.css-3d-cube .cube-face.bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+.css-3d-cube:nth-child(10) .cube-face { border-width: 1.5px; }
+.css-3d-cube:nth-child(10) .cube-face.front { transform: translateZ(20px); }
+.css-3d-cube:nth-child(10) .cube-face.back { transform: rotateY(180deg) translateZ(20px); }
+.css-3d-cube:nth-child(10) .cube-face.right { transform: rotateY(90deg) translateZ(20px); }
+.css-3d-cube:nth-child(10) .cube-face.left { transform: rotateY(-90deg) translateZ(20px); }
+.css-3d-cube:nth-child(10) .cube-face.top { transform: rotateX(90deg) translateZ(20px); }
+.css-3d-cube:nth-child(10) .cube-face.bottom { transform: rotateX(-90deg) translateZ(20px); }
+
+@keyframes cube3D {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  25% { transform: rotateX(90deg) rotateY(45deg) rotateZ(30deg); }
+  50% { transform: rotateX(180deg) rotateY(90deg) rotateZ(60deg); }
+  75% { transform: rotateX(270deg) rotateY(135deg) rotateZ(90deg); }
+  100% { transform: rotateX(360deg) rotateY(180deg) rotateZ(120deg); }
+}
+
+/* ========== FLOATING SHAPES CONTAINER ========== */
 .floating-shapes {
   position: absolute;
   inset: 0;
