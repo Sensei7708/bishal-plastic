@@ -14,10 +14,11 @@
 
   const particles = [];
   const colors = [
-    { r: 27, g: 94, b: 32 },
-    { r: 46, g: 125, b: 50 },
-    { r: 200, g: 230, b: 200 },
-    { r: 255, g: 255, b: 255 },
+    { r: 200, g: 164, b: 92 },
+    { r: 212, g: 184, b: 67 },
+    { r: 168, g: 136, b: 60 },
+    { r: 220, g: 200, b: 150 },
+    { r: 245, g: 240, b: 232 },
   ];
 
   function randomColor() {
@@ -139,7 +140,7 @@
           const avgDepth = (particles[i].depth + particles[j].depth) / 2;
           const depthAlpha = Math.min(1, Math.max(0.05, (1 - Math.abs(avgDepth) / DEPTH)));
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(46, 125, 50, ${alpha * depthAlpha})`;
+          ctx.strokeStyle = `rgba(200, 164, 92, ${alpha * depthAlpha})`;
           ctx.lineWidth = 0.8;
           ctx.moveTo(particles[i].screenX, particles[i].screenY);
           ctx.lineTo(particles[j].screenX, particles[j].screenY);
