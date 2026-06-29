@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bishalplastic.netlify.app/sitemap.xml
+Sitemap: https://sensei7708.github.io/bishal-plastic/sitemap.xml
+
