@@ -38,6 +38,23 @@ body {
   line-height: 1.7;
   background: var(--bg-dark);
   overflow-x: hidden;
+  position: relative;
+}
+
+/* ========== FULL-PAGE 3D BACKGROUND ========== */
+#full-bg-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+#full-bg-3d canvas {
+  display: block;
 }
 
 a { text-decoration: none; color: inherit; }
