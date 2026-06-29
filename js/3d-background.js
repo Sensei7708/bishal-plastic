@@ -72,6 +72,7 @@
     }
 
     draw() {
+      if (this.screenSize <= 0) return;  // guard against negative radius
       const pulseAlpha = 0.5 + 0.5 * Math.sin(this.pulse);
       const alpha = Math.min(1, Math.max(0.1, (1 - this.depth / DEPTH) * pulseAlpha));
       ctx.beginPath();

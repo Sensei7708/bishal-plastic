@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place an order with Bishal Plastic - Premium plastic household items in Murshidabad, West Bengal">
+  <meta name="keywords" content="order plastic products, bishal plastic order, euro container order">
+  <title>Place Order - Bishal Plastic</title>
+  <link rel="icon" href="images/logo-no-background.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="full-bg-3d"></div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo-no-background.png" alt="Bishal Plastic Logo">
+        <span>Bishal Plastic</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="css-3d-ring"></div>
+      <div class="css-3d-ring"></div>
+      <div class="css-3d-cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+      <div class="css-3d-cube">
+        <div class="cube-face front"></div>
+        <div class="cube-face back"></div>
+        <div class="cube-face right"></div>
+        <div class="cube-face left"></div>
+        <div class="cube-face top"></div>
+        <div class="cube-face bottom"></div>
+      </div>
+    </div>
+    <div id="three-bg"></div>
+    <canvas id="bg3d-canvas"></canvas>
+    <h1>Place Order</h1>
+    <div class="hero-line"></div>
+    <p>Select products and place your order with Bishal Plastic</p>
+  </section>
+
+  <section class="order-page">
+    <div class="container">
+      <div class="section-tag reveal">Order</div>
+      <h2 class="section-title reveal">Order <span>Form</span></h2>
+      <p class="section-subtitle reveal">Minimum order quantity is 12 pieces per product. Fill in the quantities you need and your contact details.</p>
+      <div class="section-divider"></div>
+
+      <form id="order-form" class="order-form">
+        <div class="order-products reveal">
+          <h3>Select Products</h3>
+          <div class="order-product-grid">
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-200ml.jpeg" alt="EURO 200ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 200ML</h4>
+                <p>Compact plastic cup for everyday use</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-200ml">Qty</label>
+                <input type="number" id="qty-euro-200ml" class="qty-input" data-name="EURO 200ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-225ml.jpeg" alt="EURO 225ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 225ML</h4>
+                <p>Slightly larger cup for beverages</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-225ml">Qty</label>
+                <input type="number" id="qty-euro-225ml" class="qty-input" data-name="EURO 225ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-500ml.jpeg" alt="EURO 500ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 500ML</h4>
+                <p>Medium food storage container</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-500ml">Qty</label>
+                <input type="number" id="qty-euro-500ml" class="qty-input" data-name="EURO 500ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-750ml.jpeg" alt="EURO 750ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 750ML</h4>
+                <p>Large container for dry goods</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-750ml">Qty</label>
+                <input type="number" id="qty-euro-750ml" class="qty-input" data-name="EURO 750ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-1100ml.jpeg" alt="EURO 1100ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 1100ML</h4>
+                <p>Extra-large storage container</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-1100ml">Qty</label>
+                <input type="number" id="qty-euro-1100ml" class="qty-input" data-name="EURO 1100ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-euro-1500ml.jpeg" alt="EURO 1500ML"></div>
+              <div class="order-product-info">
+                <h4>EURO 1500ML</h4>
+                <p>Maximum capacity EURO container</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-euro-1500ml">Qty</label>
+                <input type="number" id="qty-euro-1500ml" class="qty-input" data-name="EURO 1500ML" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-breakfast-cup.jpeg" alt="BREAKFAST CUP"></div>
+              <div class="order-product-info">
+                <h4>BREAKFAST CUP</h4>
+                <p>Perfect cup for breakfast cereals and beverages</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-breakfast-cup">Qty</label>
+                <input type="number" id="qty-breakfast-cup" class="qty-input" data-name="BREAKFAST CUP" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+            <div class="order-product-card">
+              <div class="order-product-img"><img src="images/gallery/product-4ltr-bucket.jpeg" alt="4LTR BUCKET"></div>
+              <div class="order-product-info">
+                <h4>4LTR BUCKET</h4>
+                <p>Strong multipurpose bucket</p>
+              </div>
+              <div class="order-qty">
+                <label for="qty-4ltr-bucket">Qty</label>
+                <input type="number" id="qty-4ltr-bucket" class="qty-input" data-name="4LTR BUCKET" min="0" max="9999" value="0" placeholder="0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-customer reveal">
+          <h3>Your Details</h3>
+          <div class="order-customer-grid">
+            <div class="form-group">
+              <label for="order-name">Full Name <span style="color:#e57373;">*</span></label>
+              <input type="text" id="order-name" placeholder="Your Full Name" required>
+              <div class="error-msg" id="order-name-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="order-phone">Phone Number <span style="color:#e57373;">*</span></label>
+              <input type="tel" id="order-phone" placeholder="Your Phone Number" required>
+              <div class="error-msg" id="order-phone-error"></div>
+            </div>
+            <div class="form-group full-width">
+              <label for="order-address">Delivery Address <span style="color:#e57373;">*</span></label>
+              <textarea id="order-address" placeholder="Full delivery address with pincode" required></textarea>
+              <div class="error-msg" id="order-address-error"></div>
+            </div>
+            <div class="form-group full-width">
+              <label for="order-notes">Additional Notes</label>
+              <textarea id="order-notes" placeholder="Any special instructions or requirements..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-submit reveal">
+          <button type="submit" class="btn" id="order-submit-btn">
+            <i class="fab fa-whatsapp"></i> Submit Order via WhatsApp
+          </button>
+          <p class="order-submit-info">Your order details will be sent to us via WhatsApp. We will confirm your order shortly.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Bishal Plastic</h4>
+          <p>Your trusted partner in quality plastic household items. Based in Murshidabad, West Bengal.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p><i class="fas fa-phone"></i> <a href="tel:7001547632">7001547632</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:mamunsk85@gmail.com">mamunsk85@gmail.com</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Mangaljan, West Bengal, Murshidabad, Ghorshala, Raghunathganj, Pin - 742235</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bishal Plastic. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/3d-background.js"></script>
+  <script src="js/three-background.js"></script>
+  <script src="js/full-bg-3d.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('order-form');
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('order-name').value.trim();
+        const phone = document.getElementById('order-phone').value.trim();
+        const address = document.getElementById('order-address').value.trim();
+        const notes = document.getElementById('order-notes').value.trim();
+
+        let isValid = true;
+
+        if (name.length < 2) {
+          showError('order-name-error', 'Please enter your full name');
+          isValid = false;
+        } else {
+          hideError('order-name-error');
+        }
+
+        const phoneRegex = /^[0-9]{10,15}$/;
+        if (!phoneRegex.test(phone.replace(/[-\s]/g, ''))) {
+          showError('order-phone-error', 'Please enter a valid phone number');
+          isValid = false;
+        } else {
+          hideError('order-phone-error');
+        }
+
+        if (address.length < 10) {
+          showError('order-address-error', 'Please enter a complete delivery address');
+          isValid = false;
+        } else {
+          hideError('order-address-error');
+        }
+
+        if (!isValid) return;
+
+        const qtyInputs = document.querySelectorAll('.qty-input');
+        let orderLines = [];
+        qtyInputs.forEach(input => {
+          const qty = parseInt(input.value, 10);
+          if (qty > 0) {
+            if (qty < 12) {
+              alert(`Minimum order quantity for ${input.getAttribute('data-name')} is 12 pieces.`);
+              isValid = false;
+              return;
+            }
+            orderLines.push(`${input.getAttribute('data-name')}: ${qty}`);
+          }
+        });
+
+        if (!isValid) return;
+
+        if (orderLines.length === 0) {
+          alert('Please select at least one product with quantity of 12 or more.');
+          return;
+        }
+
+        let message = `*New Order - Bishal Plastic*%0A%0A`;
+        message += `*Customer:* ${name}%0A`;
+        message += `*Phone:* ${phone}%0A`;
+        message += `*Address:* ${address}%0A`;
+        if (notes) message += `*Notes:* ${notes}%0A`;
+        message += `%0A*Order Details:*%0A`;
+        orderLines.forEach(line => {
+          message += `- ${line}%0A`;
+        });
+
+        const phoneNumber = '917001547632';
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+      });
+
+      function showError(id, msg) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add('show');
+      }
+
+      function hideError(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
